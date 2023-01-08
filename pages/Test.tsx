@@ -2,7 +2,7 @@ import React , {FormEvent} from 'react'
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { Auth } from '../Firebase config/firebase';
 import toast from "react-hot-toast"
-import { Input, Select } from '../components/inputs'
+import { Input, Select } from '../components/reciclables/inputs'
 
 export default function Test() {
     async function handleSubmit(event:FormEvent<HTMLFormElement>) {

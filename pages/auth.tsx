@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import {signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import Router from "next/router";
-import { Input } from "../components/inputs";
+import { Input } from "../components/reciclables/inputs";
 import axios from "axios"
 
 export default function auth() {
@@ -71,7 +71,8 @@ export default function auth() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
-        <div className="w-full md:w-1/2 border-2 m-2 p-2 flex flex-col items-center">
+      <div className="w-full md:w-1/2 border-2 rounded-lg p-2 flex flex-col items-center">
+        <h1 className="text-[2em]">Iniciar Session</h1>
             <Input id="email" label='Email' placeholder='Ingrese su correo electronico' type="text"></Input>
             <Input id="password" label='Contraseña' placeholder='Ingrese su contraseña' type="password"></Input>
             <button type="submit" className="w-full hover:bg-blue-700 py-2 bg-blue-500 text-white rounded-lg">Iniciar Session</button>

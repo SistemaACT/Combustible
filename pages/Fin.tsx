@@ -1,5 +1,5 @@
 import React , {FormEvent} from 'react'
-import { Input, Select } from '../components/inputs'
+import { Input, Select } from '../components/reciclables/inputs'
 import { UseInsert } from '../DMS/Mutations';
 import { ProcessImage } from '../Utils/transform';
 import toast from "react-hot-toast"

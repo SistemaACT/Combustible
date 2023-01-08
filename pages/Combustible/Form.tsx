@@ -1,12 +1,14 @@
 import React , {FormEvent} from 'react'
-import { Input, Select } from '../components/inputs'
-import { UseInsert } from '../DMS/Mutations';
-import { ProcessImage } from '../Utils/transform';
+import { Input, Select } from '../../components/reciclables/inputs'
+import { UseInsert } from '../../DMS/Mutations';
+import { ProcessImage } from '../../Utils/transform';
 import toast from "react-hot-toast"
 import {useSession} from "next-auth/react"
 import Router from "next/router"
+import GasCalculator from '../../components/Calculos/GasCalculator';
 
 export default function Form() {
+
 
   const {data:session} = useSession({
     required: false,
@@ -29,13 +31,15 @@ export default function Form() {
         id:toastId
       })
     }
-
-  return (
+    
+    return (
+      <>
+      <GasCalculator></GasCalculator>
     <form onSubmit={handleSubmit} className='flex justify-center'>
         <div className='w-full lg:w-1/4 rounded border-2 flex flex-col items-center'>
             <h1 className='text-[2em]'>Control de Combustible</h1> 
-                <Input id="Pesos" placeholder='¿Cuantos pesos se cargaron?' label='Cantidad Monetaria de Carga' type='number'></Input>
-                <Input id="Litros" placeholder='¿Cuantos litros se cargaron?' label='Cantidad en Litros' type='number'></Input>
+                <Input id="Pesos" placeholder='¿Cuantos pesos se cargaron?' label='Cantidad Monetaria de Carga' type='number' step={0.01} min={0}></Input>
+                <Input id="Litros" placeholder='¿Cuantos litros se cargaron?' label='Cantidad en Litros' type='number' step={0.01} min={0}></Input>
                 <Input id="Operador" placeholder='¿Ingrese el nombre del operador?' label='Operador' type='text'></Input>
                 <Select id="Maquina" label="Maquina"> 
                     <option value=""></option>
@@ -53,12 +57,13 @@ export default function Form() {
                     <option value="Compresor">Compresor</option>
                 </Select>
                 <Input id="Días" placeholder='¿Cuantos días se va a usar?' label='Dias de trabajo aproximado' type='number'></Input>
-                <Input id="horometro" placeholder='Ingrese el valor del horometro' label='Horometro' type='number'></Input>
+                <Input id="horometro" placeholder='Ingrese el valor del horometro' label='Horometro' type='number' step={0.01} min={0}></Input>
                 <Input id="file" placeholder='Ingrese la imagen' accept=".jpg, .png" label='Imagen de carga' type='file'></Input>
 
                 <button className=' rounded bg-blue-500 text-white w-full text-[1.25em] rounder p-2 my-2' type='submit'>Enviar</button>
         </div>
         
     </form>
+    </>
   )
 }

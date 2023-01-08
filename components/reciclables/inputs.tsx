@@ -6,6 +6,9 @@ type Props={
     label: string
     type: string
     accept?: string
+    step?:number
+    min?:number
+    max?:number
 }
 
 type Select = {
@@ -14,11 +17,11 @@ type Select = {
     label:string
 }
 
-export function Input({id, placeholder, label, type, accept}:Props) {
+export function Input({id, placeholder, label, type, accept, step, min, max}:Props) {
   return (
     <div className='w-full flex-col flex p-2 text-[1.25em]'>
         <label>{label}</label>
-        <input required className='border-2' id={id} name={id} placeholder={placeholder} type={type} accept={accept}></input>
+        <input required className='border-2' id={id} name={id} placeholder={placeholder} type={type} accept={accept} step={step} min={min} max={max}></input>
     </div>
   )
 }

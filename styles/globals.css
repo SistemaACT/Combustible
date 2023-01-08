@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.zoomed-img{
+    transform: scale(1.5);  /* Zoom in by 50% */
+    transition: transform 0.2s;  /* Smooth transition */
+}

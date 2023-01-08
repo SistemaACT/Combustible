@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import {signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import Router from "next/router";
-import { Input} from "../inputs"
+import { Input} from "../reciclables/inputs"
 import axios from "axios"
 
 export default function Register() {
