@@ -24,7 +24,7 @@ export default function Registrar() {
 
   return (
     <>
-    {user.role==="Admin" ? <Register></Register>: <></>}    
+    {user?.role==="Admin" ? <Register></Register>: <></>}    
     </>
   )
 }
