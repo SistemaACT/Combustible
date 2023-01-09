@@ -13,7 +13,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<ResponseData>
   ) {
-  console.log("here")
+  console.log("This is a change in the code")
     // validate if it is a POST
     if (req.method !== "POST") {
       return res
