@@ -23,13 +23,13 @@ export default async function handler(
         .json({ error: "This API call only accepts POST methods" });
     }
 
-    const {email, password } = req.body;
+    const {email, password } = req.body[0];
  
     await dbConnect();
     const emailUser = await User.findOne({ email: email });
 
     if (!emailUser) {
-        return res.status(401).json({ error: "Esta accion requiere haber iniciado session", msg:req.body });
+        return res.status(401).json({ error: "Esta accion requiere haber iniciado session", msg:req.body[0] });
     }
     if(password !== process.env.USERS_API_KEY){
         return res.status(401).json({error:"No tienes autorización para acceder a este api"})
