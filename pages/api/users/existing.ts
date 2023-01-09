@@ -26,7 +26,7 @@ export default async function handler(
     const {email, password } = req.body;
  
     await dbConnect();
-    const emailUser = await User.findOne({ email: email });
+    const emailUser = await User.findOne({ email: req.body });
 
     if (!emailUser) {
         return res.status(401).json({ error: "Esta accion requiere haber iniciado session", msg:"email" });
