@@ -23,7 +23,7 @@ export default async function handler(
         .json({ error: "This API call only accepts POST methods" });
     }
 
-    const {email, password } = JSON.parse(req.body)[0];
+    const {email, password } = JSON.parse(req.body);
  
     await dbConnect();
     const emailUser = await User.findOne({ email: email });
