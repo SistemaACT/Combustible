@@ -11,7 +11,7 @@ export default function Form() {
 
 
   const {data:session} = useSession({
-    required: false,
+    required: true,
     onUnauthenticated() {
       // The user is not authenticated, handle it here.
       Router.replace("/api/auth/signin")
@@ -27,6 +27,9 @@ export default function Form() {
       const file = await ProcessImage(values.file as File)
       delete values.file
       const res = await UseInsert("Control del Combustible", "Control", Object.values(values),file)
+     
+      console.log(res)
+     
       toast.success("Datos enviados correctamente", {
         id:toastId
       })

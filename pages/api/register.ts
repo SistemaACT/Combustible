@@ -67,7 +67,8 @@ export default async function handler(
     name: username,
     email,
     HashedPassword:hashedPassword,
-    Role:"User"
+    Role:"User",
+    image:""
   });
 
   newUser
