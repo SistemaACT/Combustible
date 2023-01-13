@@ -9,7 +9,7 @@ type Params = {
         headers?: string[];
         header?: string;
         image?:any;
-        costumFunction?: ()=>void|object
+        functionName?:string
 
 }
 
@@ -121,17 +121,17 @@ export async function useDropTable(Database: string, Table:string){
 
 }
 
-export async function useRunScript(costumFunction:()=>void|object){
+export async function useRunScript(functionName:string, data:object){
 
     let res
 
     try{
-        res = Mutation(API_URL, "costumFunction", {costumFunction})
+        res = await Mutation(API_URL, "costumFunction",{functionName:functionName, data:data})
     }catch(error){
         throw(error)
     }
 
-    return res
+    return await res.json()
 
 }
 
