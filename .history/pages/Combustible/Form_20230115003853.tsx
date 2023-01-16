@@ -52,9 +52,7 @@ export default function Form() {
                     <option value="Titan">Titan</option>
                     <option value="Grua">Grua</option>
                     <option value="Motoconformadora">Motoconformadora</option>
-                    <option value="Hilux JGBG">Hilux</option>
-                    <option value="Hilux WU2746A">Hilux WU-2746-A</option>
-                    <option value="Hilux Otra">Hilux Otra</option>
+                    <option value="Hilux">Hilux</option>
                     <option value="Pipa">Pipa</option>
                     <option value="Vibro Compactador">Vibro Compactador</option>
                     <option value="Ford 350">Ford 350</option>
