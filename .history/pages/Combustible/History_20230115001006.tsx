@@ -40,7 +40,7 @@ export default function History() {
     }) 
     useEffect(() => {
       let user: User = session?.user as User
-      if(user?.role == "Admin" || user?.role == "Owner"){
+      if(user?.role == "Admin"){
         Query(`Select * `,"Control del Combustible", "Control").then(data=>{setCargas(data)})
       }
       else if(session?.user){
