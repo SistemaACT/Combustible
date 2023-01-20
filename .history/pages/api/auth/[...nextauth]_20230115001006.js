@@ -1,5 +1,7 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+import { signInWithEmailAndPassword, signOut} from "firebase/auth"
+import {Auth} from "../../../Firebase config/firebase"
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "../../../Utils/mongodb"
 import dbConnect from "../../../Utils/dbConnect"
