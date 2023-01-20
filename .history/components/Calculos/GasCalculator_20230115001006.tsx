@@ -19,7 +19,7 @@ export default function GasCalculator() {
       }
 
   return (
-    <form className='w-full lg:w-1/3 p-2 border-2 rounded-lg' onSubmit={handleSubmit}>
+    <form className='w-full p-2 border-2 rounded-lg' onSubmit={handleSubmit}>
         <button type='button' onClick={()=>{if(!calculadora){setTexto("Cerrar");setColor("bg-red-500")}else{setTexto("Calcular Monto en Base a Litros");setAnswer(undefined);setColor("bg-green-500")};setCalculadora(!calculadora);}} className={`${color}  p-2 text-white rounded-lg w-full`}>{text}</button>
         {calculadora && 
         <div className=''>
