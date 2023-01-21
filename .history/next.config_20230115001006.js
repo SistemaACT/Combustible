@@ -10,12 +10,6 @@ const nextConfig = {
   reactStrictMode: true,
   env: env, 
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.ocado.com',
-      },
-    ],
     domains: ['drive.google.com']
   }
 }
