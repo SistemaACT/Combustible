@@ -26,9 +26,9 @@ export default function Form() {
       values.user = session!.user!.email as string
       const file = await ProcessImage(values.file as File)
       delete values.file
-      const res = await UseInsert("Control del Combustible", "Control", Object.values(values),file)
+      const res = UseInsert("Control del Combustible", "Control", Object.values(values),file)
      
-      console.log("Update",res)
+      console.log(res)
      
       toast.success("Datos enviados correctamente", {
         id:toastId

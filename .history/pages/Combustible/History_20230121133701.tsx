@@ -5,6 +5,7 @@ import Router from "next/router"
 import Link from 'next/dist/client/link'
 import ZoomableImages from '../../components/reciclables/zoomableImages'
 import { ClockLoader } from 'react-spinners'
+import Image from 'next/image'
 
 type Carga ={
     Folio: number
@@ -49,7 +50,7 @@ export default function History() {
     }, [session])
     React.useEffect(()=>{
       getData()
-  },[])
+  })
 
   async function getData(){
       const res = await fetch ("https://script.google.com/macros/s/AKfycbx4e8QBlg40ceM9_ncBpD0AqsVjDDyKit_oDWK4YqSePw9ec0RsRxMjCq9zNUS8khbtSQ/exec",
@@ -64,6 +65,7 @@ export default function History() {
     
   return (
     <div className='flex flex-col '>
+      <Image alt="Image" width={200} height={20} src="https://drive.google.com/uc?export=view&id=1yCyrYMhPl_DtiKDTA022HwDsGh96DbzP"></Image>
         {!Cargas && <div className='flex justify-center items-center align-middle h-[100vh]'>
           <ClockLoader color='#3482F6' loading={true} size={250}></ClockLoader>
           </div>}

@@ -30,6 +30,7 @@ export async function Mutation(API:string, command:string,dataParams:Params){
     }catch(error){
         throw(error)
     }
+    console.log("Mutation",await res.json())
     
     return await res.json()
 

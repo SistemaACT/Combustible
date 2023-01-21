@@ -17,8 +17,6 @@ export default function ZoomableImages({src, width, height, className, id, alt}:
         transition:"transform 0.2s",
         cursor:"pointer"
     })
-
-    console.log("Zoomable", src)
     function handleZoom(){
         if(zoom <= 3){
                 setSytle({
@@ -38,9 +36,6 @@ export default function ZoomableImages({src, width, height, className, id, alt}:
     }
 
   return (
-
     <Image id="magnifying_img"  className={className} style={zoomStyles} src={src} width={width} height={height} alt={alt} onClick={handleZoom}/>
-
-  
   )
 }

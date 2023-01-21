@@ -49,7 +49,7 @@ export default function History() {
     }, [session])
     React.useEffect(()=>{
       getData()
-  },[])
+  })
 
   async function getData(){
       const res = await fetch ("https://script.google.com/macros/s/AKfycbx4e8QBlg40ceM9_ncBpD0AqsVjDDyKit_oDWK4YqSePw9ec0RsRxMjCq9zNUS8khbtSQ/exec",

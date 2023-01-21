@@ -38,9 +38,9 @@ export default function ZoomableImages({src, width, height, className, id, alt}:
     }
 
   return (
-
+      <div>
     <Image id="magnifying_img"  className={className} style={zoomStyles} src={src} width={width} height={height} alt={alt} onClick={handleZoom}/>
-
+    </div>
   
   )
 }

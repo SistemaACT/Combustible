@@ -41,7 +41,7 @@ export default function History() {
     useEffect(() => {
       let user: User = session?.user as User
       if(user?.role == "Admin" || user?.role == "Owner"){
-        Query(`Select * `,"Control del Combustible", "Control").then(data=>{console.log(data);setCargas(data)})
+        Query(`Select * `,"Control del Combustible", "Control").then(data=>{setCargas(data)})
       }
       else if(session?.user){
       Query(`Select * Where H='${user.email!}'`,"Control del Combustible", "Control").then(data=>{setCargas(data)})
@@ -49,7 +49,7 @@ export default function History() {
     }, [session])
     React.useEffect(()=>{
       getData()
-  },[])
+  })
 
   async function getData(){
       const res = await fetch ("https://script.google.com/macros/s/AKfycbx4e8QBlg40ceM9_ncBpD0AqsVjDDyKit_oDWK4YqSePw9ec0RsRxMjCq9zNUS8khbtSQ/exec",

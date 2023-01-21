@@ -5,6 +5,7 @@ import Router from "next/router"
 import Link from 'next/dist/client/link'
 import ZoomableImages from '../../components/reciclables/zoomableImages'
 import { ClockLoader } from 'react-spinners'
+import Image from 'next/image'
 
 type Carga ={
     Folio: number

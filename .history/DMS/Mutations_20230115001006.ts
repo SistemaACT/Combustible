@@ -23,6 +23,7 @@ export async function Mutation(API:string, command:string,dataParams:Params){
 
     try{
        res =  await fetch(API,{
+            mode: "no-cors",
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             body: JSON.stringify({...dataParams, command:command, APIKey: API_KEY}) // body data type must match "Content-Type" header
         })
@@ -31,16 +32,16 @@ export async function Mutation(API:string, command:string,dataParams:Params){
         throw(error)
     }
     
-    return await res.json()
+    return res
 
 }
 
-export  function UseInsert(Database: string, Table:string, Data: Data, image?:any){
+export async function UseInsert(Database: string, Table:string, Data: Data, image?:any){
 
     let res
 
     try{
-        res =  Mutation(API_URL, "insert", {dataBase:Database, table:Table, data:Data, image:image})
+        res = await Mutation(API_URL, "insert", {dataBase:Database, table:Table, data:Data, image:image})
     }catch(error){
         throw(error)
     }
@@ -49,7 +50,7 @@ export  function UseInsert(Database: string, Table:string, Data: Data, image?:an
 
 }
 
-export  function useUpdateValue(Database: string, Table:string, PrimaryKey: string | number, header:string , Data: Data, image?:File){
+export async function useUpdateValue(Database: string, Table:string, PrimaryKey: string | number, header:string , Data: Data, image?:File){
 
     let res
 
@@ -63,7 +64,7 @@ export  function useUpdateValue(Database: string, Table:string, PrimaryKey: stri
 
 }
 
-export  function useUpdateRow(Database: string, Table:string, PrimaryKey: string | number ,Data: Data, image:File){
+export async function useUpdateRow(Database: string, Table:string, PrimaryKey: string | number ,Data: Data, image:File){
 
     let res
 
@@ -77,7 +78,7 @@ export  function useUpdateRow(Database: string, Table:string, PrimaryKey: string
 
 }
 
-export  function useDropRow(Database: string, Table:string, PrimaryKey: string | number){
+export async function useDropRow(Database: string, Table:string, PrimaryKey: string | number){
 
     let res
 
@@ -91,7 +92,7 @@ export  function useDropRow(Database: string, Table:string, PrimaryKey: string |
 
 }
 
-export  function useCreateTable(Database: string, Table:string, headers: string[]){
+export async function useCreateTable(Database: string, Table:string, headers: string[]){
 
     let res
 
@@ -106,7 +107,7 @@ export  function useCreateTable(Database: string, Table:string, headers: string[
 }
 
 
-export  function useDropTable(Database: string, Table:string){
+export async function useDropTable(Database: string, Table:string){
 
     let res
 
@@ -120,21 +121,21 @@ export  function useDropTable(Database: string, Table:string){
 
 }
 
-export  function useRunScript(functionName:string, data:object){
+export async function useRunScript(functionName:string, data:object){
 
     let res
 
     try{
-        res = Mutation(API_URL, "costumFunction",{functionName:functionName, data:data})
+        res = await Mutation(API_URL, "costumFunction",{functionName:functionName, data:data})
     }catch(error){
         throw(error)
     }
 
-    return res
+    return await res.json()
 
 }
 
-export  function useCreateDatabase(DataBase:string){
+export async function useCreateDatabase(DataBase:string){
 
     let res
 
@@ -148,7 +149,7 @@ export  function useCreateDatabase(DataBase:string){
 
 }
 
-export  function useDropDatabase(DataBase:string){
+export async function useDropDatabase(DataBase:string){
 
     let res
 
