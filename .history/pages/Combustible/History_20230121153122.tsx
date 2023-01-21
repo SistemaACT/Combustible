@@ -65,7 +65,7 @@ export default function History() {
     
   return (
     <div className='flex flex-col '>
-      <Image alt="Image" width={200} height={20} src="https://drive.google.com/uc?export=view&id=1cUorMu4O2N-wRLnQfjYtNxo6onZYNft5"></Image>
+      <Image alt="Image" width={200} height={20} src="https://drive.google.com/uc?export=view&id=1yCyrYMhPl_DtiKDTA022HwDsGh96DbzP"></Image>
         {!Cargas && <div className='flex justify-center items-center align-middle h-[100vh]'>
           <ClockLoader color='#3482F6' loading={true} size={250}></ClockLoader>
           </div>}
@@ -76,8 +76,6 @@ export default function History() {
           }else{
             date = undefined
           }
-          console.log(Carga.Evidencia === "https://drive.google.com/uc?export=view&id=1cUorMu4O2N-wRLnQfjYtNxo6onZYNft5")
-
           return (
             <div key={Carga.Folio} className='border-2 m-2 p-2 rounded-lg flex justify-between flex-wrap '>
               <div className='w-full md:w-1/2 p-1 border-2'>
@@ -117,8 +115,7 @@ export default function History() {
                           }
               </div >
               <div className='md:w-1/2 flex justify-center w-full'>
-                
-               <Image src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></Image>
+               <ZoomableImages src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></ZoomableImages>
               </div>
             </div>
           )
