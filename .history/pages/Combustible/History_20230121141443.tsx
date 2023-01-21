@@ -65,7 +65,7 @@ export default function History() {
     
   return (
     <div className='flex flex-col '>
-      <Image width={200} height={20} src="https://drive.google.com/uc?export=view&id=1m-BinSqZyyn6Q2JoAjZS0w4az27CF9lD" alt='test'></Image>
+      <Image src=""></Image>
         {!Cargas && <div className='flex justify-center items-center align-middle h-[100vh]'>
           <ClockLoader color='#3482F6' loading={true} size={250}></ClockLoader>
           </div>}
