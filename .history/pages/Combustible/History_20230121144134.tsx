@@ -65,7 +65,7 @@ export default function History() {
     
   return (
     <div className='flex flex-col '>
-      <Image width={200} height={20} src="https://drive.google.com/uc?export=view&id=1r0SxrKJe7Mz43DLQJRY98sUoxbABDetS" alt='test'></Image>
+      <Image width={200} height={20} src="https://drive.google.com/uc?export=view&id=1r0SxrKJe7Mz43DLQJRY98sUoxbABDetS/view?usp=share_link" alt='test'></Image>
       <Image width={200} height={20} src="https://drive.google.com/uc?export=view&id=1cUorMu4O2N-wRLnQfjYtNxo6onZYNft5" alt='test'></Image>
         {!Cargas && <div className='flex justify-center items-center align-middle h-[100vh]'>
           <ClockLoader color='#3482F6' loading={true} size={250}></ClockLoader>
