@@ -40,6 +40,7 @@ export default function ZoomableImages({src, width, height, className, id, alt}:
 
   return (
       <div>
+        <img className={className} style={zoomStyles} src={src} width={width} height={height} alt={alt} onClick={handleZoom}></img>
          <Image id={id?.toString()}  className={className} style={zoomStyles} src={src} width={width} height={height} alt={alt} onClick={handleZoom}/>
 
     </div>

@@ -101,7 +101,7 @@ export default function History() {
                           }
               </div >
               <div className='md:w-1/2 flex justify-center w-full'>
-               <ZoomableImages id={Carga.Folio} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></ZoomableImages>
+               <ZoomableImages src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></ZoomableImages>
               </div>
             </div>
           )
