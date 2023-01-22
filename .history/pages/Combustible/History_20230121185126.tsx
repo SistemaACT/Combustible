@@ -103,7 +103,7 @@ export default function History() {
                           }
               </div >
               <div className='md:w-1/2 flex justify-center w-full'>
-               <img id={Carga.Folio.toString()} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></img>
+               <img id={Carga.Folio} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></img>
               </div>
             </div>
           )
