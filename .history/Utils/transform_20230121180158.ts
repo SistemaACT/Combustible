@@ -10,7 +10,7 @@ export function ProcessImage(file:File): Promise<{filename: string; mimeType: st
               const canvas = document.createElement('canvas');
               canvas.width = image.width;
               canvas.height = image.height;
-              canvas.getContext('2d')!.drawImage(image, 0, 0, image.width, image.height);
+              canvas.getContext('2d').drawImage(image, 0, 0, image.width, image.height);
               obj = {
                   filename: file.name,
                   mimeType: "image/webp",
