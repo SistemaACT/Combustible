@@ -5,7 +5,7 @@ import Router from "next/router"
 import Link from 'next/dist/client/link'
 import ZoomableImages from '../../components/reciclables/zoomableImages'
 import { ClockLoader } from 'react-spinners'
-import Image from 'next/image'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type Carga ={
     Folio: number
@@ -19,6 +19,7 @@ type Carga ={
     Usuario: string
     UltimoCambio?: Date
     DiasTrabajados?:number
+    ImgId?:string
 }
 
 type User = {
@@ -40,33 +41,20 @@ export default function History() {
       },
     }) 
     useEffect(() => {
+      console.log("change")
       let user: User = session?.user as User
       if(user?.role == "Admin" || user?.role == "Owner"){
-        Query(`Select * `,"Control del Combustible", "Control").then(data=>{console.log(data);setCargas(data)})
+        Query(`Select * `,"Control del Combustible", "Control").then(data=>{setCargas(data)})
       }
       else if(session?.user){
       Query(`Select * Where H='${user.email!}'`,"Control del Combustible", "Control").then(data=>{setCargas(data)})
       }
     }, [session])
-    React.useEffect(()=>{
-      getData()
-  })
 
-  async function getData(){
-      const res = await fetch ("https://script.google.com/macros/s/AKfycbx4e8QBlg40ceM9_ncBpD0AqsVjDDyKit_oDWK4YqSePw9ec0RsRxMjCq9zNUS8khbtSQ/exec",
-      {
-          method:"POST",
-          body:JSON.stringify({hello:"World"})
-      }
-      )
-      console.log(await res.json())
-  } 
 
     
   return (
     <div className='flex flex-col '>
-      <Image alt="Image" width={200} height={20} src="https://drive.google.com/uc?export=view&id=1cUorMu4O2N-wRLnQfjYtNxo6onZYNft5"></Image>
-      <Image width={200} height={20} src="https://drive.google.com/uc?export=view&id=1-3Dh6B5Y8XE-OkzR8hT6BqWXP_V129cT" alt='test'></Image>
         {!Cargas && <div className='flex justify-center items-center align-middle h-[100vh]'>
           <ClockLoader color='#3482F6' loading={true} size={250}></ClockLoader>
           </div>}
@@ -77,8 +65,6 @@ export default function History() {
           }else{
             date = undefined
           }
-          console.log(Carga.Evidencia === "https://drive.google.com/uc?export=view&id=1cUorMu4O2N-wRLnQfjYtNxo6onZYNft5")
-
           return (
             <div key={Carga.Folio} className='border-2 m-2 p-2 rounded-lg flex justify-between flex-wrap '>
               <div className='w-full md:w-1/2 p-1 border-2'>
@@ -118,8 +104,10 @@ export default function History() {
                           }
               </div >
               <div className='md:w-1/2 flex justify-center w-full'>
-                
-               <Image src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia" ></Image>
+                {/* This is wrong and i have to fix it, it should use the zoomable image component*/}
+               <img id={Carga.Folio.toString()} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia"
+                  loading='lazy'
+               ></img>
               </div>
             </div>
           )

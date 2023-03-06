@@ -108,15 +108,6 @@ export default function History() {
                <img id={Carga.Folio.toString()} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia"
                   loading='lazy'
                ></img>
-               
-               <LazyLoadImage
-                key={Carga.Folio}
-                src={Carga.Evidencia}
-                width={400}
-                height={30}
-                effect="blur"
-                placeholderSrc={Carga.Evidencia}
-               ></LazyLoadImage>
               </div>
             </div>
           )
