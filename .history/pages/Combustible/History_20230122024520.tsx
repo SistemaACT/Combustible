@@ -5,7 +5,6 @@ import Router from "next/router"
 import Link from 'next/dist/client/link'
 import ZoomableImages from '../../components/reciclables/zoomableImages'
 import { ClockLoader } from 'react-spinners'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type Carga ={
     Folio: number
@@ -107,16 +106,8 @@ export default function History() {
                 {/* This is wrong and i have to fix it, it should use the zoomable image component*/}
                <img id={Carga.Folio.toString()} src={Carga.Evidencia} width={400} height={30} alt="Imagen de evidencia"
                   loading='lazy'
-               ></img>
                
-               <LazyLoadImage
-                key={Carga.Folio}
-                src={Carga.Evidencia}
-                width={400}
-                height={30}
-                effect="blur"
-                placeholderSrc={Carga.Evidencia}
-               ></LazyLoadImage>
+               ></img>
               </div>
             </div>
           )

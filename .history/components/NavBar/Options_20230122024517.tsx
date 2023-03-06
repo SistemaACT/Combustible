@@ -1,9 +1,11 @@
 import React from 'react'
 import {useSession} from "next-auth/react"
 import Link from "next/link"
+import {GiGasPump, GiCow} from "react-icons/gi"
 import { HiHome} from "react-icons/hi2"
 import {useRouter} from "next/router"
 import {GoSignOut} from "react-icons/go"
+import {IoIosPeople} from "react-icons/io"
 import Admin from './Options/Admin'
 import Operador from './Options/Operador'
 import Owner from './Options/Owner'

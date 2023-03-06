@@ -3,6 +3,7 @@ import {signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import Router from "next/router";
 import { Input } from "../components/reciclables/inputs";
+import axios from "axios"
 
 export default function auth() {
   

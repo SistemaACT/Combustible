@@ -47,6 +47,8 @@ export default function Form() {
                 <Select id="Maquina" label="Maquina"> 
                     <option value=""></option>
                     <option value="John Deere 310k">John Deere 310k</option>
+                    <option value="Tacoma">Tacoma</option>
+                    <option value="Ranger">Ranger</option>
                     <option value="Case 580N">Case 580N</option>
                     <option value="Case 770">Case 770</option>
                     <option value="Titan">Titan</option>
