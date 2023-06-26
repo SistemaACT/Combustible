@@ -15,7 +15,7 @@ type Productos ={
   Total:number
 }
 
-export default function index() {
+export default function Index() {
 
   const [data, setData] = useState<any>(undefined)
   const [other, setOther]= useState<boolean>(false)
