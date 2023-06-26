@@ -32,9 +32,15 @@ export default function Index() {
    
     const res = await RunScript("agregarAInventario",values)
     console.log(res)
+    if(res.error === false){
     toast.success("Datos enviados correctamente", {
       id:toastId
     })
+    }else{
+      toast.error("Algo salio mal consultar al administrador",{
+        id:toastId
+      })
+    }
   }
   return (
     <div>
