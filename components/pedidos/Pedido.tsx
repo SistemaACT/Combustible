@@ -57,7 +57,7 @@ export default function Pedido({Areas, producto}:{Areas:[string],producto:Produc
                     <div className='w-1/2 flex-col flex'>
                         <select className='border-2 rounded p-2 m-2 text-center' required onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>setarea(e.target.value)}>
                             {Areas.map((lugar)=>{
-                                return(<option value={lugar[0]}>{lugar[0]}</option>)
+                                return(<option key={lugar[0]} value={lugar[0]}>{lugar[0]}</option>)
                             })}
                         </select>
                         <button className='bg-green-500 rounded p-2 m-2 text-2xl text-white' onClick={()=>handleEntergar(producto.Id,producto['id del producto'],producto.Cantidad,area)}>Marcar como Entregado</button>

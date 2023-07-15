@@ -40,7 +40,7 @@ export default function Pedidos() {
          <div className='w-full'>
             {data.map((producto)=>{
                 return(
-                <Pedido Areas={areas} producto={producto}></Pedido>
+                <Pedido key={producto.Id} Areas={areas} producto={producto}></Pedido>
                 )
             })}
          </div>
