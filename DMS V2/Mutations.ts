@@ -11,7 +11,7 @@ export async function RunScript( fn:string,data:Object){
     let res
 
     try{
-       res =  await fetch("https://script.google.com/macros/s/AKfycbz1huHnbJDc0TPvl6gZ0zg_0H3qPllnepIJeHrHh8c14ZFJrRXbQUyuaYHpX5WXNxyINw/exec",{
+       res =  await fetch("https://script.google.com/macros/s/AKfycbwE34hN44yAmhX_HM2ZI58I-Kxn9b0owKNkavjZ8w_NhjeNhDAeait1m9egfkRMJPuzZA/exec",{
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             body: JSON.stringify({functionName:fn ,data:data, APIKey: "aVyf96paVJWiXs3Nyg6V"}) // body data type must match "Content-Type" header
         })
