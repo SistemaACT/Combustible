@@ -3,7 +3,7 @@ import { RunScript } from '../../DMS V2/Mutations'
 import { type } from 'os'
 import { ClockLoader } from 'react-spinners'
 import { stat } from 'fs'
-import Pedido from '../../components/pedidos/Pedido'
+import Pedido from '../../components/Pedidos y Aprobaciones/Pedido'
 
 
 type Producto = {

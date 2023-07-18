@@ -9,6 +9,7 @@ type Props={
     step?:number
     min?:number
     max?:number
+    onChange?:(e:React.ChangeEvent<HTMLInputElement>)=>void
 }
 
 type Select = {
